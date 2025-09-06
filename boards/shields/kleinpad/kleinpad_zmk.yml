@@ -1,0 +1,10 @@
+file_format: "1"
+id: kleinpad
+name: KleinPad
+type: shield
+url: https://github.com/mystster/zmk-keyboard-kleinpad
+requires:
+  - pro_micro
+features:
+  - keys
+  - encoder
