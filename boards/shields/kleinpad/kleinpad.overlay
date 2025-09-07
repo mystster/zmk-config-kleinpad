@@ -8,6 +8,12 @@
         // Other chosen items
     };
 
+    aliases {
+        led-red = &led0;
+        led-green = &led1;
+        led-blue = &led2;
+    };
+
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
 
@@ -45,5 +51,19 @@
         compatible = "zmk,keymap-sensors";
         sensors = <&rotary_encoder>;
         triggers-per-rotation = <12>;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+        status = "okay";
+        led0: led_0 {
+            gpios = <&gpio0 31 GPIO_ACTIVE_LOW>;  // red LED, connected to P0.31
+        };
+        led1: led_1 {
+            gpios = <&gpio0 29 GPIO_ACTIVE_LOW>;  // green LED, connected to P0.29
+        };
+        led2: led_2 {
+            gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;  // blue LED, connected to P0.02
+        };
     };
 };
