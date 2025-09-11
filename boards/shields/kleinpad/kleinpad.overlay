@@ -38,7 +38,7 @@
 
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-matrix";
-
+        wakeup-source;
         col-gpios
             = <&gpio1 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&gpio1 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
@@ -87,5 +87,10 @@
         led2: led_2 {
             gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;  // blue LED, connected to P0.02
         };
+    };
+
+    soft_off_wakers {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&kscan0>;
     };
 };
