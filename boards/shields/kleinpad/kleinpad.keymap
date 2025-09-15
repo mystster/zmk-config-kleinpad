@@ -24,7 +24,7 @@
             display-name = "base";
             bindings = <
                 &mkp LCLK    &mkp MCLK    &mkp RCLK   &mo 2
-                &kp LC(Z)    &msc LC(C)   &kp LC(V)   &to 1
+                &kp LC(Z)    &kp LC(C)   &kp LC(V)   &to 1
             >;
             sensor-bindings = <&encoder_wheel>;
         };
