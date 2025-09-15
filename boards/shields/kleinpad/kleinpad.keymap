@@ -7,13 +7,19 @@
         compatible = "zmk,keymap";
 
         default_layer { // Layer 0
-            // -------------------------------------
-            // |     Z     |     M     |     K     |
-            // |     A     |     B     |     C     |
-            // |     D     |     E     |     F     |
+            display-name = "base";
             bindings = <
                 &kp Z    &kp M    &kp K &kp A
-                &kp B    &kp C    &kp D &ext_power EP_TOG
+                &kp B    &kp C    &kp D &to 1
+            >;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        fusion_layer { // Layer 0
+            display-name = "Fusion";
+            bindings = <
+                &kp L    &kp R    &kp C &kp D
+                &kp B    &kp C    &kp D &to 0
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
