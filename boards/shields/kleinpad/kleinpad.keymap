@@ -37,5 +37,14 @@
             >;
             sensor-bindings = <&encoder_wheel>;
         };
+
+        system_layer { // Layer 0
+            display-name = "System";
+            bindings = <
+                &bt BT_NXT    &bt BT_PRV   &bt BT_DISC       &none
+                &sys_reset    &soft_off    &ext_power EP_ON  &to 0
+            >;
+            sensor-bindings = <&encoder_wheel>;
+        };
     };
- };
+};
