@@ -16,6 +16,14 @@
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
             tap-ms = <100>;
         };
+        lth: layer_tap_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&to>;
+            display-name = "Layer-Tap";
+        };
     };
     keymap {
         compatible = "zmk,keymap";
@@ -24,7 +32,7 @@
             display-name = "base";
             bindings = <
                 &mkp LCLK    &mkp MCLK    &mkp RCLK   &mo 2
-                &kp LC(Z)    &kp LC(C)   &kp LC(V)   &to 1
+                &kp LC(Z)    &kp LC(C)   &kp LC(V)   &lth 2 1
             >;
             sensor-bindings = <&encoder_wheel>;
         };
@@ -33,7 +41,7 @@
             display-name = "Fusion";
             bindings = <
                 &kp L      &kp R       &kp C      &kp D
-                &kp LSHFT  &kp LCTRL   &kp LALT   &to 0
+                &kp LSHFT  &kp LCTRL   &kp LALT   &lth 2 0
             >;
             sensor-bindings = <&encoder_wheel>;
         };
