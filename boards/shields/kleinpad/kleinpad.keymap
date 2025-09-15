@@ -16,6 +16,14 @@
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
             tap-ms = <100>;
         };
+
+        app_switch: app_switch {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            timeout-ms = <500>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+        };
+
         lth: layer_tap_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -25,13 +33,15 @@
             display-name = "Layer-Tap";
         };
     };
+
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer { // Layer 0
             display-name = "base";
             bindings = <
-                &mkp LCLK    &mkp MCLK    &mkp RCLK   &mo 2
+                &mkp LCLK    &mkp MCLK   &mkp RCLK   &app_switch
                 &kp LC(Z)    &kp LC(C)   &kp LC(V)   &lth 2 1
             >;
             sensor-bindings = <&encoder_wheel>;
