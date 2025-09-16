@@ -20,7 +20,7 @@
         app_switch: app_switch {
             compatible = "zmk,behavior-tri-state";
             #binding-cells = <0>;
-            timeout-ms = <500>;
+            timeout-ms = <2000>;
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
         };
 
